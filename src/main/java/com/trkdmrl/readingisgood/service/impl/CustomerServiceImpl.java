@@ -10,9 +10,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
-
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -40,7 +37,4 @@ public class CustomerServiceImpl implements CustomerService {
          return orderService.getOrdersByCustomerId(id,page);
     }
 
-//    public Customer findById(long id) {
-//        return customerRepository.findById(id).orElseThrow(RuntimeException::new);
-//    }
 }

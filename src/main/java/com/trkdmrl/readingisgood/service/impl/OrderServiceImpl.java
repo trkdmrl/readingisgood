@@ -75,28 +75,8 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public OrderResponseDto queryById(long id) {
         Order order = orderRepository.findById(id).orElseThrow(RuntimeException::new);
-//        OrderResponseDto orderResponseDto = new OrderResponseDto();
-//        orderResponseDto.setId(order.getId());
-//        orderResponseDto.setOrderedDate(order.getOrderedDate());
-//
-//        orderResponseDto.setPrice(order.getPrice());
-//        Customer customer = customerRepository.findById(order.getCustomer().getId()).orElseThrow(RuntimeException::new);
-//        CustomerDto customerDto = new CustomerDto();
-//        customerDto.setId(customer.getId());
-//        customerDto.setUsername(customer.getUsername());
-//        customerDto.setEmail(customer.getEmail());
-//        orderResponseDto.setCustomer(customerDto);
         OrderResponseDto orderResponseDto = orderCustomer(order);
         List<OrderDetail> orderDetails = orderDetailRepository.findByOrder_Id(order.getId());
-//        List<BookDto> books = new ArrayList<>();
-//        for(OrderDetail orderDetail : orderDetails) {
-//            Book book = bookRepository.findById(orderDetail.getBook().getId()).orElseThrow(RuntimeException::new);
-//            BookDto bookDto = new BookDto();
-//            bookDto.setId(book.getId());
-//            bookDto.setPrice(book.getPrice());
-//            bookDto.setStockNumber(book.getStockNumber());
-//            books.add(bookDto);
-//        }
         List<BookDto> books = orderBooks(orderDetails);
         orderResponseDto.setBooks(books);
         return orderResponseDto;
@@ -108,26 +88,7 @@ public class OrderServiceImpl implements OrderService {
         List<Order> orders = orderRepository.findByOrderedDateBetween(startDate, endDate);
         List<OrderResponseDto> orderDtos = new ArrayList<>();
         for(Order order : orders) {
-//            OrderResponseDto orderResponseDto = new OrderResponseDto();
-//            orderResponseDto.setId(order.getId());
-//            orderResponseDto.setOrderedDate(order.getOrderedDate());
-//            orderResponseDto.setPrice(order.getPrice());
-//            Customer customer = customerRepository.findById(order.getCustomer().getId()).orElseThrow(RuntimeException::new);
-//            CustomerDto customerDto = new CustomerDto();
-//            customerDto.setId(customer.getId());
-//            customerDto.setUsername(customer.getUsername());
-//            customerDto.setEmail(customer.getEmail());
-//            orderResponseDto.setCustomer(customerDto);
             OrderResponseDto orderResponseDto = orderCustomer(order);
-//            List<BookDto> books = new ArrayList<>();
-//            for(OrderDetail orderDetail : order.getOrderDetail()) {
-//                Book book = bookRepository.findById(orderDetail.getBook().getId()).orElseThrow(RuntimeException::new);
-//                BookDto bookDto = new BookDto();
-//                bookDto.setId(book.getId());
-//                bookDto.setPrice(book.getPrice());
-//                bookDto.setStockNumber(book.getStockNumber());
-//                books.add(bookDto);
-//            }
             List<BookDto> books = orderBooks(order.getOrderDetail());
             orderResponseDto.setBooks(books);
             orderDtos.add(orderResponseDto);
