@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "cd5bc231-57fc-401a-a6da-1e91bb2734d9",
+		"name": "readingisgood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"trkdmrl\",\r\n    \"password\": \"trkdmrl\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0cmtkbXJsIiwiaWF0IjoxNjY3MjQ5MTM4LCJleHAiOjE2NjcyNjcxMzh9.AwAlhKwk2_bM_D5epl_GcgZUbMd9YStMvhtoTo51psw50G2ffAjqfuNZu5AbAr-qd_yCkWXjkEi1o3SXvJojQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"stockNumber\": \"15\",\r\n\t\"price\": \"75.50\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/book/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0cmtkbXJsIiwiaWF0IjoxNjY3MjQ5MTM4LCJleHAiOjE2NjcyNjcxMzh9.AwAlhKwk2_bM_D5epl_GcgZUbMd9YStMvhtoTo51psw50G2ffAjqfuNZu5AbAr-qd_yCkWXjkEi1o3SXvJojQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"username\": \"trkdmrl\",\r\n\t\"password\": \"12341\",\r\n\t\"email\": \"trkdmrl10@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0cmtkbXJsIiwiaWF0IjoxNjY3MjQ5MTM4LCJleHAiOjE2NjcyNjcxMzh9.AwAlhKwk2_bM_D5epl_GcgZUbMd9YStMvhtoTo51psw50G2ffAjqfuNZu5AbAr-qd_yCkWXjkEi1o3SXvJojQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"customerId\": \"4\",\r\n\t  \"books\": [\r\n\t\t\t{\r\n\t\t\t\t\"bookId\": \"1\",\r\n\t\t\t\t\"quantity\": \"1\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"bookId\": \"3\",\r\n\t\t\t\t\"quantity\": \"1\"\r\n\t\t\t}\r\n\t\t]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/order/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Get By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0cmtkbXJsIiwiaWF0IjoxNjY3MjQ5MTM4LCJleHAiOjE2NjcyNjcxMzh9.AwAlhKwk2_bM_D5epl_GcgZUbMd9YStMvhtoTo51psw50G2ffAjqfuNZu5AbAr-qd_yCkWXjkEi1o3SXvJojQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/order/getbyid?id=6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"getbyid"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List By Date Interval",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0cmtkbXJsIiwiaWF0IjoxNjY3MjQ5MTM4LCJleHAiOjE2NjcyNjcxMzh9.AwAlhKwk2_bM_D5epl_GcgZUbMd9YStMvhtoTo51psw50G2ffAjqfuNZu5AbAr-qd_yCkWXjkEi1o3SXvJojQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/order/listbydateinterval?startDate=2022-10-31T10:03:17.272489&endDate=2022-11-01T00:03:17.272489",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order",
+						"listbydateinterval"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2022-10-31T10:03:17.272489"
+						},
+						{
+							"key": "endDate",
+							"value": "2022-11-01T00:03:17.272489"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Monthly Data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0cmtkbXJsIiwiaWF0IjoxNjY3MjQ5MTM4LCJleHAiOjE2NjcyNjcxMzh9.AwAlhKwk2_bM_D5epl_GcgZUbMd9YStMvhtoTo51psw50G2ffAjqfuNZu5AbAr-qd_yCkWXjkEi1o3SXvJojQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"month\": \"October\",\r\n\t\"customerId\": \"5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/statistic/getcustomersmonthlystatistic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"statistic",
+						"getcustomersmonthlystatistic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Stock",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0cmtkbXJsIiwiaWF0IjoxNjY3MjQ5MTM4LCJleHAiOjE2NjcyNjcxMzh9.AwAlhKwk2_bM_D5epl_GcgZUbMd9YStMvhtoTo51psw50G2ffAjqfuNZu5AbAr-qd_yCkWXjkEi1o3SXvJojQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/book/updatestock?number=5&id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"updatestock"
+					],
+					"query": [
+						{
+							"key": "number",
+							"value": "5"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
