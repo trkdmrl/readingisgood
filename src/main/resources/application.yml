@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: readingisgood
+  datasource:
+    url: jdbc:h2:mem:appdb
+    username: root
+    password: root
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+
+jwt:
+  secret: Xpct0OY87EAsL86PR1EPfFD69eANZ7bEGPGiQ1Dcj7abZIChFzRmUb6mL2pUCZME9baWyNRDhU7zh/38Lv8whg==
+
